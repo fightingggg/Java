@@ -2,124 +2,29 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Study12 {
 
-// 01.02 
-
-	   public static void main(String[] args) {
-	      Scanner s = new Scanner (System.in);
-	      
-	  // Array(¹è¿­) => int [] m = new int[5];
-	      ArrayList<Integer> m = new ArrayList<Integer>();
-	      
-	      System.out.println("Enter a print");
-	      int n = s.nextInt();
-	      while(n!=-1) {
-	    	  m.add(n);	 // ArrayList°¡ ÇÏ³ª ´Ã¾î³ª¸é¼­, »õ°ªÀ» Ãß°¡
-	    	  System.out.println("Enter a print");
-	    	  n = s.nextInt();
-	      }
-	      
-//	      int[] m = new int[5];
-//	      int i=0;
-//	      int sum=0;
-//	      int pp=0;
-//	      while(i<m.length) {
-//	         System.out.println("ÀÔ·ÂÇÏ½Ã¿À");
-//	         m[i]=s.nextInt();
-//	         sum+=(m[i]);
-//	         i++;
-//	      }
-	      
-//	      System.out.println("------------------");
-//	      i=0;
-	      
-//	      while(i<m.length) {
-//	         //Á¡¼öÀÇ ÇÕ°è¸¦ ´©Àû total
-//	         System.out.println(m[i]);
-//	         
-//	         i++;
-//	      }
-	      
-	      System.out.println("-------------------------");
-	      int i = 0;
-	      int total = 0;
-	      while(i<m.size()) {
-	    	  System.out.println(m.get(i));
-	    	  i++;
-	      }
-	      
-	      i= 0;
-	      while(i<m.size()) {
-	    	  if(m.get(i)==0) {
-	    		  m.remove(i);
-	    		  
-	    	  }
-	    	  i++;
-	      }
-	      i = 0;
-	      while(i<m.size()) {
-	    	  System.out.println(m.get(i));
-	    	  i++;
-	      }
-	      
-	      System.out.println("----------------");
-	      i=0;
-	      int total1 = 0;
-	      while(i<m.size()) {
-	    	  System.out.println(m.get(i));
-	    	  total1 = total1+m.get(i);
-	    	  i++;
-	      }
-	      
-	      float avg = (float)total1/m.size();
-	      System.out.println("average "+avg);
-	      System.out.println("ÇÁ·Î±×·¥Á¾·á.");
-	      
-	      //Æò±ÕÁ¡¼ö (ÃÑÇÕ/°¹¼ö) °è»ê & Ãâ·Â
-	     // System.out.println("ÇÁ·Î±×·¥Á¾·á.");
-	   }
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		ArrayList<Integer> m = new ArrayList<Integer>();
+		
+		
+		while(true) {
+			System.out.println("Enter a point!");
+			int n = s. nextInt();
+			if(n==-1) break;
+			if(n==0) {
+				System.out.println("Invalid point");
+				continue;
+			}
+			m.add(n);
+			
+		}
+		int i = 0;
+		while(i<m.size()) {   // ì‚¬ìš©ìžê°€ ë©”ì†Œë“œë¥¼ í˜¸ì¶œ ì‹œ ë°ì´í„°ë¥¼ ì‚½ìž…í•´ì£¼ëŠ” ì—­í• ì„ ë‹´ë‹¹í•©ë‹ˆë‹¤
+			System.out.println(m.get(i));  // ë°°ì—´ i[]0 í•˜ê³  ë˜‘ê°™ 0í•˜ë©´ ì²«ë²ˆì§¸ 1í•˜ë©´ 2ë²ˆì§¸ 2í•˜ë©´ 3ë²ˆì§¸
+			i++;
+		}
+		System.out.println("Program terminated.");
 
 	}
-	
-	
 
-	// Array int[]m = new in[5];
-//1. array´Â ±æÀÌ °íÁ¤ÀÌ ÇÑ°è´Ù
-// 2. ÀÏ´Ü ³ÖÀ¸¸é °ªÀ» ³Ö°Å³ª »©´Â°Ô ¾ÈµÈ´Ù. ½ÇÁ¦ ¾÷¹«¿¡¼­´Â ¸î¸íÀÇ µ¥ÀÌÅÍ°¡ µé¾î°¥Áö Àß ¸ð¸¥´Ù. Array¸¦ ´ëÃ¼ ÇÒ¸¸ÇÑ°Ô ÇÊ¿äÇÏ´Ù
-// ±×·¡¼­ ³ª¿Â°Ô ArrayList °¡ ³ª¿Ô´Ù Ã³À½¿¡ ³ª¿ÔÀ»‹š´Â Àß ¾È½è´Ù ¾ê´Â ±æÀÌ °íÁ¤µµ ¾Æ´Ï°í ´ÜÁ¡ÀÌ ³»ºÎÀûÀ¸·Î Ã³¸®ÇÏ´Ù º¸´Ï±î ¼Óµµ°¡ ³Ê¹« ´À¸®´Ù
-// ÃÊÃ¢±â¿¡´Â Àß ¾È½è´Ù. ½Ã°£ÀÌ Áö³¯¼ö·Ï ÄÄÇ»ÅÍ°¡ ÁÁ¾ÆÁ®¼­ ½Ç¹«¿¡¼­´Â 80ÇÁ·Î Á¤µµ ¾î·¹ÀÌ¸¦ Àß ¾È¾´´Ù. 
-// 3. 
-	
-	
-	
-//	public static void main(String[] args) {
-//		Scanner s = new Scanner(System.in);
-//		
-//		int [] m = new int[5];
-//		int i = 0;
-//		while(i<m.length) {
-//			System.out.println("Enter a point:");
-//			m[i]=s.nextInt();
-//			i++;
-//		}
-//		System.out.println("--------------------");
-//		i=0;
-//		int total=0;
-//		while(i<m.length) {
-//			System.out.println(m[i]);
-//			
-//		total=total+m[i];
-//			// Á¡¼öÀÇ ÇÕ°è¸¦ ´©Àû total =
-//			
-//			
-//			i++;
-//		}
-//		
-//		System.out.println("");
-//		total=();
-//		// Æò±ÕÁ¡¼ö (ÃÑÇÕ/°¹¼ö) °è»ê & Ãâ·Â
-//		System.out.println("program terminated.");
-//		
-//
-//	}
-//
-//}
+}
