@@ -13,6 +13,16 @@ public class study {
     }
     System.out.println(sum);
     
+		
+// 	String str = "Good Morning Vietnam";
+		
+		String str1=" ";
+		for (int i=0; i<str.length(); i++) {
+			str1=str.substring(i,i+1)+str1;
+		}
+		System.out.println(str1);
+		
+		
 
 
 
